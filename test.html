@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <h1>{{name}} 是世界上最流行的编程语言。</h1>
+
+    <p>这门语言可用于 {{tech.html}} 和 {{tech.web}}</p>
+
+    <p>更可广泛用于{{terminal.server}}、{{terminal.computer.pc}}、{{terminal.computer.pad}}和{{terminal.phone}}等设备。</p>
+
+    <span>———— {{name}}</span>
+</div>
+
+<script src="./dist/minisaki.js"></script>
+
+<script>
+
+    var ms = new MSaki({ el: '#app', data: {
+        name: 'JavaScript',
+        terminal: {
+            server: '服务器',
+            computer:{
+                "pc": "PC",
+                "pad": "平板电脑"
+            },
+            phone: '智能手机'
+        },
+        tech: {
+            html: "HTML",
+            web: "web"
+        }}
+
+    });
+
+    setTimeout(()=>{
+        ms.name = "Python";
+    }, 2000)
+
+    setTimeout(()=>{
+        ms.name = "Go";
+    }, 5000)
+</script>
+</body>
+</html>
